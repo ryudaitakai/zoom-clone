@@ -1,10 +1,17 @@
 // サーバ側の処理
 
-const express = require('express')
-const app = express()
-const server = require('http').Server(app)
+const express = require('express');
+const app = express();
+const server = require('http').Server(app);
 const io = require('socket.io')(server)
 const { v4 : uuidV4 } = require('uuid')
+
+const {ExpressPeerServer} = require('peer')
+const peerServer = ExpressPeerServer(server, {
+    debug: true
+})
+
+app.use('/peerjs', peerServer)
 
 app.set('view engine', 'ejs')
 app.use(express.static('public')) //publicフォルダ内のファイルを読み込めるようにする
@@ -32,4 +39,4 @@ io.on('connection', socket => {
 })
 
 
-server.listen(3000)
+server.listen(process.env.PORT || 3000);

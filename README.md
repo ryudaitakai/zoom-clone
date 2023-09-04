@@ -30,6 +30,6 @@ URLの末尾にIDが自動で発行されます。同じIDを持つ人とビデ�
  
 * 作成者：高井隆大
 * 所属：群馬大学
-* E-mail：3xxxv5.3xxxv5.3xxxv5@gmail.com
+* E-mail：ryudai.takai@gmail.com
  
 
